@@ -17,3 +17,20 @@ Guides on unconventional software development career trajectories:
   solopreneur story.
 - <https://blog.gregbrockman.com/how-i-became-a-machine-learning-practitioner/> -
   Learning resources for ML engineer track.
+
+---
+
+# AI Engineer
+
+This is a term that is being used a bit more nowadays. Trying to document what
+things are there in this area.
+
+Taken from <https://youtu.be/3E_jDJST69s>.
+
+## Categories of AI Companies
+
+- **AI Product Companies** - Using existing models and infra to build a product on
+top of it.
+- **AI Infrastructure Companies** - Builders of tools needed for model training,
+like vector database, etc.
+- **AI Model Companies** - Builders of models.
