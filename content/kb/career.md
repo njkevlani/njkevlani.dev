@@ -2,6 +2,11 @@
 title: "Career"
 ---
 
+## Websites for company research
+
+- <https://trueup.io/>
+- <https://www.workforce.ai/>
+
 Guides on unconventional software development career trajectories:
 
 - <https://jacquesmattheij.com/be-consultant/> - Working as independent
