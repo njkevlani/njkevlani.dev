@@ -22,6 +22,9 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 This list includes fonts for system, symbols, emojis and icons.
 
+`ttf-ms-fonts` and `ttf-mac-fonts` make sure that some web pages using Microsoft
+or Apple fonts are rendered properly.
+
 ```shell
 paru -S \
   noto-fonts \
@@ -33,6 +36,8 @@ paru -S \
   noto-color-emoji-fontconfig \
   awesome-terminal-fonts \
   woff2-font-awesome \
+  ttf-mac-fonts \
+  ttf-ms-fonts \
 ```
 
 [^1]: <https://wiki.archlinux.org/title/SSH_keys>
