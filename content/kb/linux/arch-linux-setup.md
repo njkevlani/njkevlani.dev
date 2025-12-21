@@ -4,40 +4,47 @@ title: "Arch Linux Setup"
 
 This page has list of things that makes linux experience better.
 
-## System services [^1]
+System will keep functioning without these things, but the experience will be
+subpar at places (like not good font rendering, having to enter ssh password
+multiple times). Since system will keep functioning, these are easy to miss and
+difficult to identify and fix.
+
+Linux distros are always evolving, so there might be things on this page which
+might not be irrelevant because of various reasons like they being by the distro
+or they bering replaced with sometthing new.
+
+## System services
+
+### SSH [^1]
+
+Enables ssh-agent makes it possible to use ssh-add once and keep using it
+without needing to enter password again for ssh.
 
 ```shell
-# enables ssh-agent, which makes it possible to use ssh-add once and keep using
-# it without needing to enter password again.
-systemctl --user enable ssh-agent.service
+systemctl enable --user ssh-agent.service
 ```
 
-And include this in your shell startup file (like `.zshrc`).
+### Ghostty daemon [^2]
+
+This allows opening a new ghostty terminal window faster.
 
 ```shell
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+systemctl enable --user app-com.mitchellh.ghostty.service
 ```
 
 ## Fonts
 
-This list includes fonts for system, symbols, emojis and icons.
-
-`ttf-ms-fonts` and `ttf-mac-fonts` make sure that some web pages using Microsoft
-or Apple fonts are rendered properly.
+This list includes fonts for system, symbols, emojis and icons. Without these
+fonts, fonts do not looks good on website, emjies are not rendered on websites,
+symbol fonts are not rendered in system elements (like waybar).
 
 ```shell
-paru -S \
-  noto-fonts \
-  ttf-liberation \
-  ttf-dejavu \
-  ttf-opensans \
-  noto-fonts-cjk \
+pacman -S noto-fonts \
   noto-fonts-emoji \
-  noto-color-emoji-fontconfig \
-  awesome-terminal-fonts \
-  woff2-font-awesome \
-  ttf-mac-fonts \
-  ttf-ms-fonts \
+  ttf-dejavu \
+  ttf-liberation \
+  ttf-nerd-fonts-symbols
 ```
 
 [^1]: <https://wiki.archlinux.org/title/SSH_keys>
+[^2]: <https://ghostty.org/docs/linux/systemd#starting-ghostty-at-login>
