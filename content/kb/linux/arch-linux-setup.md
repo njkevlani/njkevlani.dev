@@ -15,16 +15,16 @@ or they bering replaced with sometthing new.
 
 ## System services
 
-### SSH [^1]
+### SSH agent daemon[^1]
 
-Enables ssh-agent makes it possible to use ssh-add once and keep using it
+Enabling ssh-agent makes it possible to use ssh-add once and keep using it
 without needing to enter password again for ssh.
 
 ```shell
 systemctl enable --user ssh-agent.service
 ```
 
-### Ghostty daemon [^2]
+### Ghostty daemon[^2]
 
 This allows opening a new ghostty terminal window faster.
 
@@ -39,7 +39,7 @@ fonts, fonts do not looks good on website, emjies are not rendered on websites,
 symbol fonts are not rendered in system elements (like waybar).
 
 ```shell
-pacman -S noto-fonts \
+sudo pacman -S noto-fonts \
   noto-fonts-emoji \
   ttf-dejavu \
   ttf-liberation \
