@@ -1,5 +1,5 @@
 ---
-title: "Linux Setup"
+title: "Arch Linux Setup"
 ---
 
 This page has list of things that makes linux experience better.
