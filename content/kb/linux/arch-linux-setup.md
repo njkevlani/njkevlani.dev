@@ -46,5 +46,9 @@ sudo pacman -S noto-fonts \
   ttf-nerd-fonts-symbols
 ```
 
+## Setting up Fingerprint
+
+Follow <https://wiki.archlinux.org/title/Fprint>
+
 [^1]: <https://wiki.archlinux.org/title/SSH_keys>
 [^2]: <https://ghostty.org/docs/linux/systemd#starting-ghostty-at-login>
