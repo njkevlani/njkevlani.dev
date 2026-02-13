@@ -50,5 +50,22 @@ sudo pacman -S noto-fonts \
 
 Follow <https://wiki.archlinux.org/title/Fprint>
 
+## External Display Brightness Control
+
+Load `i2c-dev` kernel module.
+
+```shell
+sudo modprobe i2c-dev
+```
+
+To load this module on every boot automatically, use this:
+
+```shell
+echo i2c-dev | sudo tee /etc/modules-load.d/i2c-dev.conf
+```
+
+Once `i2c-dev` module is loaded, you should be able to use `dccutils` for
+managing external monitor brightness.
+
 [^1]: <https://wiki.archlinux.org/title/SSH_keys>
 [^2]: <https://ghostty.org/docs/linux/systemd#starting-ghostty-at-login>
