@@ -50,6 +50,8 @@ sudo pacman -S noto-fonts \
 
 Follow <https://wiki.archlinux.org/title/Fprint>
 
+For fingerprint support in `swaylock`, follow this - <https://github.com/swaywm/swaylock/issues/61#issuecomment-965175390>
+
 ## External Display Brightness Control
 
 Load `i2c-dev` kernel module.
