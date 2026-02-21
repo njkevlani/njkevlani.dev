@@ -69,5 +69,15 @@ echo i2c-dev | sudo tee /etc/modules-load.d/i2c-dev.conf
 Once `i2c-dev` module is loaded, you should be able to use `ddcutil` for
 managing external monitor brightness.
 
+## `udev` Rules for QMK Via Keyboards[^3]
+
+By default, QMK Via keyboard devices are added to system without read/write
+permissions. This result in being unable to make changes to it via
+<http://usevia.app/>.
+
+To resole this, add [50-qmk.rules](https://github.com/qmk/qmk_firmware/blob/master/util/udev/50-qmk.rules)
+to `/etc/udev/rules.d/`. This will make the device readable and writable.
+
 [^1]: <https://wiki.archlinux.org/title/SSH_keys>
 [^2]: <https://ghostty.org/docs/linux/systemd#starting-ghostty-at-login>
+[^3]: <https://docs.qmk.fm/faq_build#linux-udev-rules>
