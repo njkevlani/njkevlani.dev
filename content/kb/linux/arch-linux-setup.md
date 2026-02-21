@@ -66,7 +66,7 @@ To load this module on every boot automatically, use this:
 echo i2c-dev | sudo tee /etc/modules-load.d/i2c-dev.conf
 ```
 
-Once `i2c-dev` module is loaded, you should be able to use `dccutils` for
+Once `i2c-dev` module is loaded, you should be able to use `ddcutil` for
 managing external monitor brightness.
 
 [^1]: <https://wiki.archlinux.org/title/SSH_keys>

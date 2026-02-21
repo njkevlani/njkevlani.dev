@@ -1,3 +1,7 @@
+---
+title: "Debian Setup"
+---
+
 # Tips for Making Debian Experience Better
 
 Ensure installing `firmware-linux` for better hardware support. For example,
