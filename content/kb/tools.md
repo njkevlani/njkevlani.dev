@@ -29,6 +29,9 @@ title: "Tools"
 
 - Diagram to understand github repositories -
   <https://github.com/ahmedkhaleel2004/gitdiagram>
+- Understand any project:
+  - <https://deepwiki.com/>
+  - <https://codewiki.google/>
 
 # Cloud
 
