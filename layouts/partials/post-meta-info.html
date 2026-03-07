@@ -4,7 +4,7 @@
     <div class="posted-by">
         {{ if not .Date.IsZero }} Posted on {{ .Date.Format "2006-01-02" }}. {{ end }}
         {{ if and (not (eq .Lastmod .Date)) .Site.Params.postHistory.enabled }}
-            {{ $historyHREF := printf "%s/commits/%s/%s/%s" .Site.Params.postHistory.siteGitRepo .GitInfo.AbbreviatedHash .Site.Params.postHistory.contentDirRelativeToGitRepoRoot .File.Path }}
+            {{ $historyHREF := printf "%s/commits/%s/content/%s" .Site.Params.postHistory.siteGitRepo .GitInfo.AbbreviatedHash .File.Path }}
             Last updated on {{ .Lastmod.Format "2006-01-02" }} (<a href="{{ $historyHREF }}">history</a>).
         {{ end }}
         <br />
