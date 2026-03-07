@@ -3,6 +3,7 @@
   {{ partial "head.html" . }}
   <body class="for-side-nav">
     <aside id="side-nav-open" class="for-side-nav">
+      <button id="close-menu-button">×</button>
       <nav>
         {{ partial "side-nav-bar" (dict "currentPage" . "pages" (.Site.GetPage (printf "/%s" .Section)).Pages) }}
       </nav>
@@ -20,20 +21,15 @@
     </main>
 
     <script>
-      var menuOpened = false;
       document.addEventListener('DOMContentLoaded', function () {
         const navbar = document.getElementById('side-nav-open');
 
-        var menuButton = document.getElementById('menu-button');
-        menuButton.addEventListener('click', function () {
-          navbar.classList.toggle('active');
+        document.getElementById('menu-button').addEventListener('click', function () {
+          navbar.classList.add('active');
+        });
 
-          menuOpened = !menuOpened;
-          if (menuOpened) {
-            menuButton.innerText = 'X'
-          } else {
-            menuButton.innerText = '≡'
-          }
+        document.getElementById('close-menu-button').addEventListener('click', function () {
+            navbar.classList.remove('active');
         });
       });
     </script>
