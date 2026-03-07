@@ -18,7 +18,7 @@ h2 {
 
 body.for-side-nav {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 280px minmax(0, 1fr);
     column-gap: 10px;
     max-width: 100%;
 }
@@ -120,7 +120,7 @@ details[open].for-side-nav > summary.for-side-nav::after {
 @media (width <= 768px) {
     body.for-side-nav {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     #menu-button {
@@ -160,6 +160,10 @@ pre {
     margin-bottom: 0;
 }
 
+div.highlight {
+    overflow-x: auto;
+}
+
 img {
     max-width: 100%;
     vertical-align: middle;
@@ -184,6 +188,7 @@ table {
     border: 1px solid #ccc;
     width: 100%;
     text-align: left;
+    overflow-x: auto;
 }
 
 th {
