@@ -85,7 +85,7 @@ div.side-nav-item:hover {
     border-radius: 4px;
 }
 
-div.side-nav-item > a {
+div.side-nav-item>a {
     color: #1168cc;
     text-decoration: none;
 }
@@ -109,7 +109,7 @@ summary.for-side-nav::after {
     cursor: pointer;
 }
 
-details[open].for-side-nav > summary.for-side-nav::after {
+details[open].for-side-nav>summary.for-side-nav::after {
     transform: rotate(45deg) translateY(-0.3em);
 }
 
@@ -126,7 +126,7 @@ details[open].for-side-nav > summary.for-side-nav::after {
     display: none;
 }
 
-@media (width <= 768px) {
+@media (width <=768px) {
     body.for-side-nav {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
@@ -249,15 +249,15 @@ kbd {
 }
 
 /* CSS specific to table */
-section > table > tbody > tr:nth-of-type(2n+1) {
+section>table>tbody>tr:nth-of-type(2n+1) {
     background-color: #eee;
 }
 
-section > table > tbody > tr th {
+section>table>tbody>tr th {
     background-color: #ddd;
 }
 
-section > table > tbody > tr:hover {
+section>table>tbody>tr:hover {
     background-color: #ffb90f;
 }
 
@@ -300,7 +300,7 @@ section > table > tbody > tr:hover {
     color: #333;
 }
 
-span.svg-icon > img {
+span.svg-icon>img {
     height: 1rem;
     max-width: 100%;
     max-height: 100%;
