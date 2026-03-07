@@ -48,7 +48,7 @@ jobs:
 
       - uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.147.9'
+          hugo-version: '0.157.0'
 
       - name: Install html2pdf
         run: |
