@@ -11,6 +11,11 @@ body {
     overflow-wrap: break-word;
 }
 
+h1,
+h2 {
+    line-height: 1.2em;
+}
+
 body.for-side-nav {
     display: grid;
     grid-template-columns: 280px 1fr;
