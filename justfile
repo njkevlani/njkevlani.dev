@@ -14,7 +14,7 @@ server-lan:
 lint:
 	typos
 	yamllint .
-	stylelint "**/*.css"
+	stylelint "**/*.css" "!public/**/*.css"
 	markdownlint-cli2 "**/*.md"
 
 fix-lint:
