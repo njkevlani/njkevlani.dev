@@ -15,8 +15,8 @@ Guides on unconventional software development career trajectories:
   open-source maintainer.
 - <https://news.tonydinh.com/p/my-solopreneur-story-zero-to-45kmo/> - Tony Dinh's
   solopreneur story.
-- <https://blog.gregbrockman.com/how-i-became-a-machine-learning-practitioner/> -
-  Learning resources for ML engineer track.
+- <https://blog.gregbrockman.com/how-i-became-a-machine-learning-practitioner/>
+  \- Learning resources for ML engineer track.
 
 ---
 
@@ -29,8 +29,8 @@ Taken from <https://youtu.be/3E_jDJST69s>.
 
 ## Categories of AI Companies
 
-- **AI Product Companies** - Using existing models and infra to build a product on
-top of it.
+- **AI Product Companies** - Using existing models and infra to build a product
+  on top of it.
 - **AI Infrastructure Companies** - Builders of tools needed for model training,
-like vector database, etc.
+  like vector database, etc.
 - **AI Model Companies** - Builders of models.
