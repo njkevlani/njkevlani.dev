@@ -44,3 +44,33 @@ Fill in details, for SMTP settings, you can use these:
 A verification email will be sent to the email that you with to be used as
 sender, so you'll need to configure receiving emails first in order to configure
 this.
+
+## Sending Emails Programmatically
+
+You can use email setup in this way to send emails programmatically as well.
+
+Here is a `golang` code sample for the same:
+
+```golang
+addr := fmt.Sprintf("%s:%s", h.Cfg.SMTPHost, h.Cfg.SMTPPort)
+auth := smtp.PlainAuth("", h.Cfg.SMTPUsername, h.Cfg.SMTPPassword, h.Cfg.SMTPHost)
+
+msg := fmt.Appendf(nil, "From: %s <%s>\r\n"+
+    "To: %s\r\n"+
+    "Subject: Test Email\r\n"+
+    "\r\n"+
+    "This is an test email to test sending email using custom email via Gamil\r\n", h.Cfg.SMTPSenderName, h.Cfg.SMTPEmail, email)
+
+err := smtp.SendMail(addr, auth, h.Cfg.SMTPEmail, []string{email}, msg)
+if err != nil {
+    log.Printf("Failed to send email to %s: %v", email, err)
+}
+```
+
+- `h.Cfg.SMTPUsername` is your `@gmail` address.
+- `h.Cfg.SMTPPassword` is the SMTP password that you generated earlier.
+- `h.Cfg.SMTPEmail` is your email on your custom domain.
+
+Notice that we are using `h.Cfg.SMTPEmail` twice, in `smtp.SendMail`, as well as
+in `From` header. Without this, the `@gmail` address is used instead of your
+custom domain email!
