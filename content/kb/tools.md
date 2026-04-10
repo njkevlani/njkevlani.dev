@@ -18,6 +18,7 @@ title: "Tools"
 - Multiple utils for generating aesthetic QR codes -
   <https://kylezhe.ng/posts/crafting_qr_codes>
   - <https://github.com/zhengkyl/qrframe>
+- Convert formats and compress images for webapps - <https://squoosh.app/>
 
 # Webapps
 
