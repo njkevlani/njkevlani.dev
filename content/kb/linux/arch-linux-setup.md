@@ -76,7 +76,27 @@ permissions. This result in being unable to make changes to it via
 <http://usevia.app/>.
 
 To resole this, add [50-qmk.rules](https://github.com/qmk/qmk_firmware/blob/master/util/udev/50-qmk.rules)
-to `/etc/udev/rules.d/`. This will make the device readable and writable.
+to `/etc/udev/rules.d/`. This will make the device readable and writable if the
+vendor ID and product ID are present in that rule.
+
+If your keyboards vendor ID and product ID is not listed in these rules, you can
+create a new rule by yourself as well.
+
+Create a new file at `/etc/udev/rules.d/50-qmk-custom.rules` with the following
+content, replacing `XXXX` and `YYYY` with your actual vid and pid:
+
+```text
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="XXXX", ATTRS{idProduct}=="YYYY", MODE="0660", TAG+="uaccess"
+```
+
+You can reload the `udev` rules and force them to apply:
+
+```bash
+sudo udevadm control --reload-rules
+sudo udevadm trigger --subsystem-match=hidraw --action=add
+```
+
+Or you can just unplug and replug your keyboard.
 
 [^1]: <https://wiki.archlinux.org/title/SSH_keys>
 [^2]: <https://ghostty.org/docs/linux/systemd#starting-ghostty-at-login>
