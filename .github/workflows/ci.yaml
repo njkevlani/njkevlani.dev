@@ -30,7 +30,7 @@ jobs:
 
       - uses: extractions/setup-just@v2
 
-      - uses: DavidAnson/markdownlint-cli2-action@v20
+      - uses: DavidAnson/markdownlint-cli2-action@v23
         with:
           globs: '**/*.md'
 
