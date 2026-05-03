@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta name="description" content="Nilesh Kevlani's Resume" />
-    <title>{{ .Site.Data.resume.Name }} | Resume</title>
+    <title>{{ hugo.Data.resume.Name }} | Resume</title>
     {{ $stylemain := resources.Get "css/resume/style.css" | minify | fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $stylemain.RelPermalink }}">
   </head>
@@ -14,18 +14,18 @@
     <div id="resume">
       <!-- Name section - Name, title, location, links -->
       <div id="name-section">
-        <div id="name">{{ .Site.Data.resume.Name }}</div>
-        <div id="title">{{ .Site.Data.resume.Title }}</div>
+        <div id="name">{{ hugo.Data.resume.Name }}</div>
+        <div id="title">{{ hugo.Data.resume.Title }}</div>
         <div id="location">
           <span class="svg-icon">
             <img src="/assets/icons/location.svg" alt="link-icon" />
           </span>
 
-          {{ .Site.Data.resume.Location }}
+          {{ hugo.Data.resume.Location }}
         </div>
         <div id="links">
           <ol class="links">
-            {{ range $link := .Site.Data.resume.Links }}
+            {{ range $link := hugo.Data.resume.Links }}
             <li>
               <a href="{{ $link.HREF }}">
                 <span class="svg-icon">
@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      {{ range $section := .Site.Data.resume.Sections }}
+      {{ range $section := hugo.Data.resume.Sections }}
 
         {{ if eq $section.Type "ListingSection" }}
           <div class="listing-section section">
