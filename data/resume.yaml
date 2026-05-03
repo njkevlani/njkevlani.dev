@@ -76,6 +76,8 @@ Sections:
             - Documented the journey in a multi-part engineering blog series:
               - [Modernizing Events Platform At ShareChat](https://sharechat.com/blogs/engineering/modernizing-events-platform-at-sharechat)
               - [Building a Unified Events Platform at ShareChat](https://sharechat.com/blogs/engineering/building-a-unified-events-platform-at-sharechat)
+              - [Distributing protobuf contracts at scale](https://sharechat.com/blogs/engineering/distributing-protobuf-contracts-at-scale-why-we-built-a-custom-tool)
+              - [Migrating 1000+ event contracts from JSON to Protobuf](https://sharechat.com/blogs/engineering/migrating-1000-event-contracts-from-json-to-protobuf)
           - Established org-wide **Protobuf schema standards** for data contracts, driving adoption across 10+ teams.
             - Built consensus across the organisation on contract structure, coordinating migration of 10+ teams from JSON to Protobuf.
             - Mentored and led **5 engineers** across multiple Protobuf adoption projects.
