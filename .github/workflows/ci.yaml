@@ -28,7 +28,7 @@ jobs:
       - name: setup-stylelint
         run: npm install stylelint stylelint-config-standard @stylistic/stylelint-plugin postcss -g
 
-      - uses: extractions/setup-just@v2
+      - uses: extractions/setup-just@v4
 
       - uses: DavidAnson/markdownlint-cli2-action@v20
         with:
@@ -48,7 +48,7 @@ jobs:
         with:
           node-version: current
 
-      - uses: extractions/setup-just@v2
+      - uses: extractions/setup-just@v4
 
       - uses: peaceiris/actions-hugo@v2
         with:
