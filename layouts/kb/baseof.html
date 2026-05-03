@@ -10,10 +10,16 @@
     </aside>
 
     <main>
-      <h1>
-          <button id="menu-button">≡</button>
-          {{ .Title }}
-      </h1>
+      <pagefind-modal></pagefind-modal>
+
+      <div id="title">
+        <button id="menu-button">≡</button>
+
+        <h1>{{ .Title }}</h1>
+
+        <pagefind-modal-trigger class="search-btn" hide-shortcut compact></pagefind-modal-trigger>
+      </div>
+
       <hr />
 
       {{ block "main" . }}
