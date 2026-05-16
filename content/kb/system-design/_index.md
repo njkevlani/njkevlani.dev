@@ -13,9 +13,14 @@ Things to study practically:
 
 Things to do in system design interview:
 
-- Coming up with a system design diagram.
+- Gather information about functional requirements, nonfunctional requirements and scale.
+- Thinking about entity / database design. Indexing.
+  - Map real world things and relationships into entities.
 - Thinking about API contracts.
-- Thinking about database design.
-- Thinking about failure cases / retry cases / bottlenecks.
-- Thinking about observability and alerting.
-- Protecting service - rate-limiting / throttling.
+- Coming up with a system design diagram.
+- Thinking about resiliency / failure cases / retry cases / bottlenecks.
+  - Concurrency
+  - Rate limiting
+  - Fallbacks
+  - Circuit breakers
+- Thinking about observability, monitoring, and alerting.
