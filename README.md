@@ -11,6 +11,11 @@ Live at <https://njkevlani.dev>.
 just clean server
 ```
 
+## TODO
+
+- [Resume] Have capability to add tags to highlights in career summary, OSS
+  summary, etc.
+
 ## Credit
 
 - <https://unixsheikh.com/>
