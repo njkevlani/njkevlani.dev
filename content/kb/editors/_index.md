@@ -6,8 +6,10 @@ List of things that I have been liking / disliking about different editors.
 
 - nvim
   - :green_circle: Extremely configurable.
+    - Being able to build the exact layout that I wish to have.
   - :green_circle: Extremely fast.
   - :green_circle: Huge ecosystem.
+    - Composable with a huge range of functionalities for coding, writing.
   - :red_circle: Limits of TUI
     - Not being able move with keeping cursor out of the view.
   - :red_circle: Not single binary.
