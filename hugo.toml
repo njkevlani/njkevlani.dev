@@ -3,6 +3,7 @@ languageCode = 'en-us'
 relativeURLs = true
 enableEmoji = true
 enableGitInfo = true
+uglyURLs = true
 
 [params.author]
   name = "Nilesh Kevlani"
@@ -55,6 +56,8 @@ enableGitInfo = true
     term = ["HTML"]
 
 [outputFormats]
+  [outputFormats.HTML]
+    noUgly = true
   [outputFormats.RSS]
     mediatype = "application/rss"
     baseName = "rss"
