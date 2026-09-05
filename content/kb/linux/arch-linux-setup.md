@@ -98,6 +98,28 @@ sudo udevadm trigger --subsystem-match=hidraw --action=add
 
 Or you can just unplug and replug your keyboard.
 
+## File Explorer Related Dependencies
+
+- Ensure installing `gvfs` for supporting Trash related functionalities and more.
+- Ensure installing `gvfs-mtp to be able to see Android MTP devices upon connecting.
+- Ensure installing `xarchive` for extracting files directly from `thunar`.
+- Ensure installing utilies for (un/)archiving.
+  - `zip`, `unzip` for `.zip` files.
+  - `7zip` for `iso`.
+  - `tar`, `unrar`, `gzip`
+
+## Reclaim Storage
+
+- `sudo pacman -Scc`
+  - Remove all cached packages.
+- `sudo journalctl --vacuum-time=1d`
+  - Remove systemd logs older than 1 day.
+  - Check disk usage using `journalctl --disk-usage`.
+- `paru -Sc`
+  - Remove unused AUR packages and untracked files. Using `-Scc` will remove
+    all, but after that, we will not be able to see diff of the local PKGBUILD
+    files vs remote PKGBUILD files.
+
 [^1]: <https://wiki.archlinux.org/title/SSH_keys>
 [^2]: <https://ghostty.org/docs/linux/systemd#starting-ghostty-at-login>
 [^3]: <https://docs.qmk.fm/faq_build#linux-udev-rules>
