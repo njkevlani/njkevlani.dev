@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="description" content="Nilesh Kevlani's Resume" />
     <title>{{ hugo.Data.resume.Name }} | Resume</title>
-    {{ $stylemain := resources.Get "css/resume/style.css" | minify | fingerprint "sha512" }}
+    {{ $stylemain := resources.Get "css/style.css" | minify | fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $stylemain.RelPermalink }}">
   </head>
 

@@ -12,11 +12,11 @@
         {{ end }}
 
         {{ if gt (len .Data.Terms.Alphabetical) 0 }}
-            <p>
+            <div class="terms-list">
                 {{ range .Data.Terms.Alphabetical }}
-                <p><a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }}({{ .Count }})</a></p>
+                <p><a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }} ({{ .Count }})</a></p>
                 {{ end }}
-            </p>
+            </div>
         {{ else }}
             Nothing in here at the moment.
         {{ end }}

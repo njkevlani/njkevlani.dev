@@ -1,0 +1,773 @@
+/* ==========================================================================
+   Theme 2: Neutral System (Native OS & Clean Web)
+   Personality: Fast, native, invisible UI with crisp system typography.
+   ========================================================================== */
+
+:root {
+    --bg-canvas: #ffffff;
+    --bg-surface: #f6f8fa;
+    --bg-surface-hover: #eaeef2;
+    --text-main: #1f2328;
+    --text-muted: #656d76;
+    --text-heading: #1f2328;
+    --link-color: #0969da;
+    --link-hover: #0550ae;
+    --border-color: #d0d7de;
+    --border-subtle: #e1e4e8;
+    --code-bg: #f6f8fa;
+    --code-text: #1f2328;
+    --tag-bg: #f6f8fa;
+    --tag-border: #d0d7de;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+    --line-height-body: 1.6;
+    --max-width-prose: 46rem;
+    --max-width-resume: 48rem;
+    --sidebar-width: 17.5rem;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+}
+
+/* Base Reset & Typography */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-canvas);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: var(--line-height-body);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-heading);
+    font-family: var(--font-body);
+    font-weight: 600;
+    line-height: 1.25;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 1.85rem;
+    margin-top: 0.5em;
+}
+
+h2 {
+    font-size: 1.4rem;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-size: 1.05rem;
+}
+
+h5,
+h6 {
+    font-size: 0.95rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: color 0.12s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+strong,
+b {
+    font-weight: 600;
+    color: var(--text-heading);
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 1.75em 0;
+}
+
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 1.5em;
+}
+
+li {
+    margin-bottom: 0.3em;
+}
+
+li::marker {
+    color: var(--text-muted);
+}
+
+blockquote {
+    margin: 1.25em 0;
+    padding: 0.35em 1em;
+    border-left: 3.5px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Code & Preformatted */
+code,
+kbd,
+samp {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 0.15em 0.35em;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+}
+
+pre {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    line-height: 1.45;
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 0.9rem 1.15rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    overflow-x: auto;
+    margin: 1.25em 0;
+}
+
+pre code {
+    background: transparent;
+    padding: 0;
+    border: 0;
+    font-size: inherit;
+    color: inherit;
+}
+
+/* Syntax Highlighting overrides for tables */
+.highlight table,
+.chroma table,
+table.lntable {
+    border: none;
+    margin: 0;
+    width: auto;
+    background: transparent;
+}
+
+.highlight td,
+.chroma td,
+.highlight th,
+.chroma th,
+td.lntd {
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25em 0;
+    font-size: 0.9rem;
+}
+
+th,
+td {
+    padding: 0.55em 0.75em;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+th {
+    background-color: var(--bg-surface);
+    font-weight: 600;
+    color: var(--text-heading);
+}
+
+tr:nth-child(even) {
+    background-color: var(--bg-surface);
+}
+
+/* Images & Media */
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.svg-icon {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: -0.125em;
+}
+
+.svg-icon img {
+    width: 0.95em;
+    height: 0.95em;
+}
+
+/* Navigation */
+nav {
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-canvas);
+}
+
+nav .nowrap {
+    white-space: nowrap;
+    margin-right: 0.75rem;
+    color: var(--text-muted);
+}
+
+nav a.nav-btn {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a.nav-btn:hover {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+nav a.nav-btn.active {
+    font-weight: 600;
+    color: var(--text-heading);
+}
+
+/* Main Content Container */
+body > section,
+body > main {
+    max-width: var(--max-width-prose);
+    margin: 0 auto;
+    padding: 2.25rem 1.5rem 3.5rem;
+}
+
+/* Post Metadata */
+.posted-by {
+    font-family: var(--font-ui);
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin-bottom: 1.75rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.posted-by a {
+    color: var(--text-muted);
+}
+
+.posted-by a:hover {
+    color: var(--link-color);
+}
+
+.tag-btn {
+    display: inline-block;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    padding: 0.12rem 0.45rem;
+    margin: 0.2rem 0.2rem 0.2rem 0;
+    background-color: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.tag-btn:hover {
+    background-color: var(--bg-surface-hover);
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+/* Knowledge Base Layout */
+body.for-side-nav {
+    display: flex;
+    min-height: 100vh;
+}
+
+aside.for-side-nav {
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    background-color: var(--bg-surface);
+    border-right: 1px solid var(--border-color);
+    padding: 1.25rem 0.85rem;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    font-family: var(--font-ui);
+    font-size: 0.84rem;
+}
+
+aside.for-side-nav nav {
+    padding: 0;
+    border-bottom: 0;
+    background: transparent;
+}
+
+ul.for-side-nav {
+    list-style: none;
+    padding-left: 0.75rem;
+    margin: 0.2rem 0;
+}
+
+aside.for-side-nav > nav > ul.for-side-nav {
+    padding-left: 0;
+}
+
+li.for-side-nav {
+    margin-bottom: 0.2rem;
+}
+
+details.for-side-nav summary {
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    color: var(--text-main);
+    font-weight: 600;
+    padding: 0.2rem 0;
+}
+
+details.for-side-nav summary::-webkit-details-marker {
+    display: none;
+}
+
+details.for-side-nav summary::before {
+    content: '▾';
+    display: inline-block;
+    margin-right: 0.35rem;
+    font-size: 0.8em;
+    color: var(--text-muted);
+}
+
+details.for-side-nav:not([open]) > summary::before {
+    content: '▸';
+}
+
+.side-nav-item {
+    display: inline-block;
+}
+
+.side-nav-item a {
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 0.15rem 0.35rem;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+}
+
+.side-nav-item a:hover {
+    background-color: var(--bg-surface-hover);
+    color: var(--link-color);
+}
+
+.side-nav-item a.currently-opened {
+    font-weight: 600;
+    color: var(--link-color);
+    background-color: var(--bg-canvas);
+    border: 1px solid var(--border-color);
+}
+
+#close-menu-button,
+#menu-button {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.2rem 0.45rem;
+    color: var(--text-main);
+}
+
+#close-menu-button {
+    display: none;
+    margin-bottom: 1rem;
+}
+
+#menu-button {
+    display: none;
+    margin-right: 0.75rem;
+}
+
+body.for-side-nav main {
+    flex-grow: 1;
+    max-width: var(--max-width-prose);
+    padding: 2.25rem 1.75rem 3.5rem;
+    margin: 0 auto;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.85rem;
+}
+
+#title h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    flex-grow: 1;
+}
+
+.search-btn {
+    margin-left: 1rem;
+}
+
+/* Resume Styles */
+#resume {
+    max-width: var(--max-width-resume);
+    margin: 1.5rem auto 3.5rem;
+    padding: 0 1.25rem;
+    font-family: var(--font-body);
+}
+
+#name-section {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+#name-section #name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+}
+
+#name-section #title {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+#name-section #location {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 0.65rem;
+}
+
+#name-section #links ol.links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 1.15rem;
+    font-size: 0.84rem;
+}
+
+#name-section #links ol.links li a {
+    color: var(--text-main);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+#name-section #links ol.links li a:hover {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+.section {
+    margin-bottom: 1.75rem;
+}
+
+.section-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-heading);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.85rem;
+}
+
+.listing-section ol.tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
+    font-size: 0.8125rem;
+}
+
+.listing-section ol.tags li {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: 0.12rem 0.45rem;
+    border-radius: var(--radius-sm);
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+#work-experience-list,
+#education-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.company-details,
+.education-details {
+    margin-bottom: 1.35rem;
+}
+
+.company-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: 0.15rem;
+}
+
+.grid-2-columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.role span:first-child {
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.course-name {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-right: 0.45rem;
+}
+
+.institute-name {
+    margin-right: 0.45rem;
+}
+
+.right-aligned {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.work-description {
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.work-description ul {
+    padding-left: 1.2rem;
+    margin-top: 0.35rem;
+    margin-bottom: 0.35rem;
+}
+
+.work-description li {
+    margin-bottom: 0.25rem;
+}
+
+.font-bolder {
+    font-weight: 600;
+    color: var(--text-heading);
+}
+
+/* Responsive / Mobile */
+@media (max-width: 768px) {
+    body.for-side-nav {
+        display: block;
+    }
+
+    aside.for-side-nav {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.2s ease-in-out;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+        width: 80%;
+        max-width: 19rem;
+    }
+
+    aside.for-side-nav.active {
+        transform: translateX(0);
+    }
+
+    #close-menu-button,
+    #menu-button {
+        display: inline-block;
+    }
+
+    body.for-side-nav main {
+        padding: 1.25rem 1rem 3rem;
+    }
+
+    body > section {
+        padding: 1.25rem 1rem 3rem;
+    }
+
+    .grid-2-columns {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.15rem;
+    }
+
+    .right-aligned {
+        text-align: left;
+    }
+}
+
+/* Print Styles for A4 Resume / PDF */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 12mm 15mm;
+    }
+
+    html,
+    body {
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 9.5pt;
+        line-height: 1.35;
+    }
+
+    nav,
+    aside.for-side-nav,
+    #menu-button,
+    #close-menu-button,
+    .search-btn,
+    pagefind-modal,
+    pagefind-modal-trigger {
+        display: none !important;
+    }
+
+    body.for-side-nav main,
+    body > section,
+    #resume {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #name-section {
+        margin-bottom: 0.9rem;
+        padding-bottom: 0.45rem;
+        border-bottom-color: #000000;
+    }
+
+    #name-section #name {
+        font-size: 17pt;
+    }
+
+    #name-section #title {
+        font-size: 9.5pt;
+        margin-bottom: 0.2rem;
+    }
+
+    #name-section #location,
+    #name-section #links ol.links {
+        font-size: 8pt;
+    }
+
+    .section {
+        margin-bottom: 1rem;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .section-title {
+        font-size: 8.5pt;
+        padding-bottom: 0.15rem;
+        margin-bottom: 0.45rem;
+        border-bottom-color: #222222;
+    }
+
+    .company-details,
+    .education-details {
+        margin-bottom: 0.8rem;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .company-name {
+        font-size: 10pt;
+    }
+
+    .grid-2-columns {
+        font-size: 8pt;
+        margin-bottom: 0.2rem;
+    }
+
+    .work-description {
+        font-size: 8pt;
+        line-height: 1.35;
+    }
+
+    .listing-section ol.tags {
+        font-size: 7.5pt;
+        gap: 0.2rem 0.35rem;
+    }
+
+    .listing-section ol.tags li {
+        background-color: #f7f7f7;
+        border-color: #cccccc;
+        padding: 0.1rem 0.3rem;
+    }
+
+    a {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .page-break {
+        page-break-after: always;
+        break-after: page;
+    }
+}
