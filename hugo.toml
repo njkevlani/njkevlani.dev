@@ -49,6 +49,7 @@ enableGitInfo = true
   tag = "tags"
 
 [outputs]
+    page = ["HTML", "MARKDOWN"]
     section = ["HTML"]
     taxonomy = ["HTML"]
     term = ["HTML"]
