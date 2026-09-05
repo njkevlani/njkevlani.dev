@@ -6,8 +6,10 @@
     <meta charset="utf-8" />
     <meta name="description" content="Nilesh Kevlani's Resume" />
     <title>{{ hugo.Data.resume.Name }} | Resume</title>
-    {{ $stylemain := resources.Get "css/resume/style.css" | minify | fingerprint "sha512" }}
-    <link rel="stylesheet" href="{{ $stylemain.RelPermalink }}">
+    {{ $stylemain := resources.Get "css/resume/style.css" | minify }}
+    <style>
+      {{ $stylemain.Content | safeCSS }}
+    </style>
   </head>
 
   <body>
@@ -18,7 +20,7 @@
         <div id="title">{{ hugo.Data.resume.Title }}</div>
         <div id="location">
           <span class="svg-icon">
-            <img src="/assets/icons/location.svg" alt="link-icon" />
+            <img src="../assets/icons/location.svg" alt="link-icon" />
           </span>
 
           {{ hugo.Data.resume.Location }}
@@ -29,7 +31,7 @@
             <li>
               <a href="{{ $link.HREF }}">
                 <span class="svg-icon">
-                  <img src="{{ $link.IconLocation }}" alt="link-icon" />
+                  <img src="..{{ $link.IconLocation }}" alt="link-icon" />
                 </span>
                 {{- $link.Content }}
               </a>
@@ -54,7 +56,7 @@
                   {{ if $item.Score }}
                   <span class="svg-icon">
                     <img
-                      src="/assets/icons/score-{{ $item.Score }}.svg"
+                      src="../assets/icons/score-{{ $item.Score }}.svg"
                       alt="score"
                     />
                   </span>
@@ -96,7 +98,7 @@
                       <span>{{ $role.Title }}</span>
                       <div class="right-aligned">
                         <span class="svg-icon">
-                          <img src="/assets/icons/calendar.svg" alt="link-icon" />
+                          <img src="../assets/icons/calendar.svg" alt="link-icon" />
                         </span>
                         <span>
                           {{ $role.Duration }}
@@ -129,7 +131,7 @@
                       <span class="course-name">{{ $educationItem.Course }}</span>
                       <span class="institute-name">{{ $educationItem.Institute }}</span>
                       <span class="svg-icon">
-                        <img src="/assets/icons/location.svg" alt="link-icon" />
+                        <img src="../assets/icons/location.svg" alt="link-icon" />
                       </span>
                       <span>{{ $educationItem.Location }}</span>
                     </div>
@@ -140,7 +142,7 @@
                         &nbsp;
                         <span>
                           <span class="svg-icon">
-                            <img src="/assets/icons/calendar.svg" alt="link-icon" />
+                            <img src="../assets/icons/calendar.svg" alt="link-icon" />
                           </span>
                           <span>
                             {{ $educationItem.Duration }}

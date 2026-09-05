@@ -1,6 +1,5 @@
 baseURL = "https://njkevlani.dev"
 languageCode = 'en-us'
-relativeURLs = true
 enableEmoji = true
 enableGitInfo = true
 uglyURLs = true
