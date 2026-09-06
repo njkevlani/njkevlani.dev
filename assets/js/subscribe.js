@@ -25,7 +25,8 @@ function initSubscriptionForm() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email: email })
+                body: JSON.stringify({ email: email }),
+                signal: AbortSignal.timeout(10000)
             });
 
             const data = await response.json();
