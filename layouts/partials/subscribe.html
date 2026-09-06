@@ -1,0 +1,13 @@
+<div>
+    <hr>
+    <h3>Subscribe</h3>
+    <p>Get notified when new articles and updates are published.</p>
+    <form id="subscribe-form" data-api-host="{{ site.Params.apiHost }}">
+        <input type="email" id="subscribe-email" name="email" placeholder="Enter your email" required autocomplete="email">
+        <button type="submit" id="subscribe-button">Subscribe</button>
+        <p id="subscribe-message"></p>
+    </form>
+</div>
+
+{{ $script := resources.Get "js/subscribe.js" | minify | fingerprint "sha512" }}
+<script type="module" src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>

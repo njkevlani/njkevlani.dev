@@ -322,3 +322,14 @@ span.svg-icon>img {
 span.svg-icon {
     vertical-align: middle;
 }
+
+#subscribe-form input,
+#subscribe-form button {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+#subscribe-message.error {
+    color: #e01e5a;
+}
+
