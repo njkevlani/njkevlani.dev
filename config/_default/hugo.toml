@@ -8,6 +8,8 @@ uglyURLs = true
   name = "Nilesh Kevlani"
 
 [params]
+  apiHost = "http://localhost:8080"
+
   [params.postHistory]
     enabled = true
     siteGitRepo = "https://github.com/njkevlani/njkevlani.dev"
@@ -74,4 +76,3 @@ uglyURLs = true
   [markup.highlight]
     lineNos = true
     style = 'autumn'
-
