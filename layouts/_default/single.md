@@ -1,1 +1,1 @@
-{{- .RawContent -}}
+{{- .File.Path | os.ReadFile -}}
