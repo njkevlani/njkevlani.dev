@@ -14,6 +14,16 @@ function initSubscriptionForm() {
         const email = emailInput.value.trim();
         if (!email) return;
 
+        const turnstileToken = (window.turnstile && typeof window.turnstile.getResponse === 'function')
+            ? window.turnstile.getResponse()
+            : '';
+
+        if (!turnstileToken) {
+            messageEl.className = 'error';
+            messageEl.textContent = 'Please complete the bot verification before subscribing.';
+            return;
+        }
+
         submitButton.disabled = true;
         submitButton.textContent = 'Subscribing...';
         messageEl.className = '';
@@ -25,7 +35,10 @@ function initSubscriptionForm() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email: email }),
+                body: JSON.stringify({
+                    email: email,
+                    turnstileToken: turnstileToken
+                }),
                 signal: AbortSignal.timeout(10000)
             });
 
@@ -39,10 +52,17 @@ function initSubscriptionForm() {
                 messageEl.className = 'error';
                 messageEl.textContent = (data && data.error && data.error.message) ? data.error.message : 'Failed to subscribe. Please try again.';
             }
-        } catch (err) {
+        } catch {
             messageEl.className = 'error';
             messageEl.textContent = 'An error occurred. Please try again later.';
         } finally {
+            if (window.turnstile && typeof window.turnstile.reset === 'function') {
+                try {
+                    window.turnstile.reset();
+                } catch {
+                    // ignore if widget not ready
+                }
+            }
             submitButton.disabled = false;
             submitButton.textContent = 'Subscribe';
         }
