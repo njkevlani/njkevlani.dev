@@ -341,6 +341,10 @@ span.svg-icon {
     font-size: inherit;
 }
 
+#subscribe-form .cf-turnstile {
+    margin: 0.75rem 0;
+}
+
 #subscribe-message.error {
     color: #e01e5a;
 }

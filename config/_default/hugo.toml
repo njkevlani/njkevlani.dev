@@ -9,6 +9,7 @@ uglyURLs = true
 
 [params]
   apiHost = "http://localhost:8080"
+  turnstileSiteKey = "0x4AAAAAAE0o8XAQ5sVdPUBA"
 
   [params.postHistory]
     enabled = true
