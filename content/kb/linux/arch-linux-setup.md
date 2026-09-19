@@ -98,6 +98,18 @@ sudo udevadm trigger --subsystem-match=hidraw --action=add
 
 Or you can just unplug and replug your keyboard.
 
+## `mpris-proxy` Service
+
+Enable `mpris-proxy` service to be able to have good to have things with
+Bluetooth earbuds. It will enable things like:
+
+- Double tab to pause or resume media.
+- In ear detection t pause or resume media.
+
+```shell
+systemctl --user enable mpris-proxy.service --now
+```
+
 [^1]: <https://wiki.archlinux.org/title/SSH_keys>
 [^2]: <https://ghostty.org/docs/linux/systemd#starting-ghostty-at-login>
 [^3]: <https://docs.qmk.fm/faq_build#linux-udev-rules>
