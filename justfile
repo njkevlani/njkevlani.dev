@@ -30,3 +30,9 @@ fix-lint:
 
 lint-ci:
 	stylelint "**/*.css"
+
+lint-deps:
+	typos --version || bin install https://github.com/crate-ci/typos
+	yamllint --version || pip3 install --user yamllint
+	stylelint --version || npm install stylelint stylelint-config-standard @stylistic/stylelint-plugin --global
+	which markdownlint-cli2 || npm install markdownlint-cli2 --global
