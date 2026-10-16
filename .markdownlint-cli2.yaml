@@ -1,3 +1,4 @@
+---
 config:
   # Disable no-hard-tabs for code blocks.
   no-hard-tabs:
